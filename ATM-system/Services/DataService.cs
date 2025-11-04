@@ -67,6 +67,10 @@ namespace ATMSimulation.Services
             var random = new Random();
             for (int i = 1; i <= 20; i++)
             {
+                // 地区分配逻辑：1-6→北京，7-13→上海，14-20→广东
+                string location = i <= 6 ? "北京" :
+                                 (i <= 13 ? "上海" : "广东");
+
                 var account = new Account
                 {
                     CardNumber = $"622202000000{i:0000}",
@@ -75,7 +79,7 @@ namespace ATMSimulation.Services
                     Balance = 5000 + i * 100,
                     IsLocked = false,
                     FailedAttempts = 0,
-                    Location = "北京"
+                    Location = location // 应用分配的地区
                 };
 
                 // 添加一些初始交易记录
