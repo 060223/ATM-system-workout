@@ -13,6 +13,7 @@
         private System.Windows.Forms.Button btnQuick500;
         private System.Windows.Forms.Button btnQuick1000;
         private System.Windows.Forms.Button btnQuick2000;
+        private System.Windows.Forms.Panel panelContainer;
 
         protected override void Dispose(bool disposing)
         {
@@ -37,28 +38,32 @@
             this.btnQuick500 = new System.Windows.Forms.Button();
             this.btnQuick1000 = new System.Windows.Forms.Button();
             this.btnQuick2000 = new System.Windows.Forms.Button();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.panelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(30, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 17);
+            this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "取款金额";
             // 
             // txtAmount
             // 
+            this.txtAmount.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtAmount.Location = new System.Drawing.Point(120, 29);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(150, 20);
+            this.txtAmount.Size = new System.Drawing.Size(150, 23);
             this.txtAmount.TabIndex = 1;
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // btnWithdraw
             // 
+            this.btnWithdraw.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnWithdraw.Location = new System.Drawing.Point(60, 180);
             this.btnWithdraw.Name = "btnWithdraw";
             this.btnWithdraw.Size = new System.Drawing.Size(100, 30);
@@ -69,6 +74,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCancel.Location = new System.Drawing.Point(180, 180);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 30);
@@ -80,9 +86,10 @@
             // chkPrintReceipt
             // 
             this.chkPrintReceipt.AutoSize = true;
+            this.chkPrintReceipt.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.chkPrintReceipt.Location = new System.Drawing.Point(120, 150);
             this.chkPrintReceipt.Name = "chkPrintReceipt";
-            this.chkPrintReceipt.Size = new System.Drawing.Size(74, 17);
+            this.chkPrintReceipt.Size = new System.Drawing.Size(75, 21);
             this.chkPrintReceipt.TabIndex = 4;
             this.chkPrintReceipt.Text = "打印回单";
             this.chkPrintReceipt.UseVisualStyleBackColor = true;
@@ -90,14 +97,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(30, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 13);
+            this.label2.Size = new System.Drawing.Size(80, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "快速取款金额";
             // 
             // btnQuick100
             // 
+            this.btnQuick100.Font = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnQuick100.Location = new System.Drawing.Point(120, 65);
             this.btnQuick100.Name = "btnQuick100";
             this.btnQuick100.Size = new System.Drawing.Size(60, 25);
@@ -108,6 +117,7 @@
             // 
             // btnQuick500
             // 
+            this.btnQuick500.Font = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnQuick500.Location = new System.Drawing.Point(190, 65);
             this.btnQuick500.Name = "btnQuick500";
             this.btnQuick500.Size = new System.Drawing.Size(60, 25);
@@ -118,6 +128,7 @@
             // 
             // btnQuick1000
             // 
+            this.btnQuick1000.Font = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnQuick1000.Location = new System.Drawing.Point(120, 100);
             this.btnQuick1000.Name = "btnQuick1000";
             this.btnQuick1000.Size = new System.Drawing.Size(60, 25);
@@ -128,6 +139,7 @@
             // 
             // btnQuick2000
             // 
+            this.btnQuick2000.Font = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnQuick2000.Location = new System.Drawing.Point(190, 100);
             this.btnQuick2000.Name = "btnQuick2000";
             this.btnQuick2000.Size = new System.Drawing.Size(60, 25);
@@ -136,28 +148,39 @@
             this.btnQuick2000.UseVisualStyleBackColor = true;
             this.btnQuick2000.Click += new System.EventHandler(this.btnQuick2000_Click);
             // 
+            // panelContainer
+            // 
+            this.panelContainer.BackColor = System.Drawing.Color.White;
+            this.panelContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelContainer.Controls.Add(this.btnQuick2000);
+            this.panelContainer.Controls.Add(this.btnQuick1000);
+            this.panelContainer.Controls.Add(this.btnQuick500);
+            this.panelContainer.Controls.Add(this.btnQuick100);
+            this.panelContainer.Controls.Add(this.label2);
+            this.panelContainer.Controls.Add(this.chkPrintReceipt);
+            this.panelContainer.Controls.Add(this.btnCancel);
+            this.panelContainer.Controls.Add(this.btnWithdraw);
+            this.panelContainer.Controls.Add(this.txtAmount);
+            this.panelContainer.Controls.Add(this.label1);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(334, 241);
+            this.panelContainer.TabIndex = 10;
+            // 
             // WithdrawForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(236, 240, 241);
             this.ClientSize = new System.Drawing.Size(334, 241);
-            this.Controls.Add(this.btnQuick2000);
-            this.Controls.Add(this.btnQuick1000);
-            this.Controls.Add(this.btnQuick500);
-            this.Controls.Add(this.btnQuick100);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.chkPrintReceipt);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnWithdraw);
-            this.Controls.Add(this.txtAmount);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "WithdrawForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "取款";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

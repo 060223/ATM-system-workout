@@ -2,6 +2,7 @@
 using ATMSimulation.Services;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ATMSimulation.Forms
@@ -14,8 +15,33 @@ namespace ATMSimulation.Forms
         {
             InitializeComponent();
             atmService = service;
+            ApplyStyles();
             LoadAccountInfo();
             LoadTransactionHistory();
+        }
+
+        private void ApplyStyles()
+        {
+            // 应用窗体样式
+            UIStyleService.ApplyFormStyle(this);
+
+            // 应用控件样式
+            UIStyleService.ApplyLabelStyle(lblCardNumber);
+            UIStyleService.ApplyLabelStyle(lblUserName);
+            UIStyleService.ApplyLabelStyle(lblBalance);
+            UIStyleService.ApplyLabelStyle(lblLocation);
+            UIStyleService.ApplyLabelStyle(lblStatus);
+            UIStyleService.ApplyLabelStyle(lblTransactionCount);
+            UIStyleService.ApplyButtonStyle(btnClose, ButtonStyle.Secondary);
+            UIStyleService.ApplyButtonStyle(btnPrint, ButtonStyle.Primary);
+            UIStyleService.ApplyButtonStyle(btnExport, ButtonStyle.Success);
+            UIStyleService.ApplyGroupBoxStyle(groupBox1);
+            UIStyleService.ApplyGroupBoxStyle(groupBox2);
+            UIStyleService.ApplyListViewStyle(listViewTransactions);
+
+            // 设置背景
+            this.BackColor = UIStyleService.LightColor;
+            panelContainer.BackColor = Color.White;
         }
 
         private void LoadAccountInfo()
@@ -53,15 +79,15 @@ namespace ATMSimulation.Forms
                     // 根据交易类型设置颜色
                     if (transaction.Type == "Deposit")
                     {
-                        item.ForeColor = System.Drawing.Color.Green;
+                        item.ForeColor = Color.Green;
                     }
                     else if (transaction.Type == "Withdraw")
                     {
-                        item.ForeColor = System.Drawing.Color.Red;
+                        item.ForeColor = Color.Red;
                     }
                     else if (transaction.Type == "Transfer")
                     {
-                        item.ForeColor = System.Drawing.Color.Blue;
+                        item.ForeColor = Color.Blue;
                     }
 
                     listViewTransactions.Items.Add(item);

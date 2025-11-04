@@ -11,6 +11,7 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblBalance;
+        private System.Windows.Forms.Panel panelContainer;
 
         protected override void Dispose(bool disposing)
         {
@@ -33,11 +34,13 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblBalance = new System.Windows.Forms.Label();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.panelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnWithdraw
             // 
-            this.btnWithdraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWithdraw.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnWithdraw.Location = new System.Drawing.Point(50, 80);
             this.btnWithdraw.Name = "btnWithdraw";
             this.btnWithdraw.Size = new System.Drawing.Size(120, 40);
@@ -48,7 +51,7 @@
             // 
             // btnDeposit
             // 
-            this.btnDeposit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeposit.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnDeposit.Location = new System.Drawing.Point(200, 80);
             this.btnDeposit.Name = "btnDeposit";
             this.btnDeposit.Size = new System.Drawing.Size(120, 40);
@@ -59,7 +62,7 @@
             // 
             // btnTransfer
             // 
-            this.btnTransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransfer.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnTransfer.Location = new System.Drawing.Point(50, 140);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(120, 40);
@@ -70,7 +73,7 @@
             // 
             // btnQuery
             // 
-            this.btnQuery.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuery.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnQuery.Location = new System.Drawing.Point(200, 140);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(120, 40);
@@ -81,7 +84,7 @@
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePassword.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnChangePassword.Location = new System.Drawing.Point(50, 200);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(120, 40);
@@ -92,7 +95,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnLogout.Location = new System.Drawing.Point(200, 200);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(120, 40);
@@ -104,43 +107,54 @@
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblWelcome.Location = new System.Drawing.Point(50, 20);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(57, 20);
+            this.lblWelcome.Size = new System.Drawing.Size(42, 22);
             this.lblWelcome.TabIndex = 6;
             this.lblWelcome.Text = "欢迎";
             // 
             // lblBalance
             // 
             this.lblBalance.AutoSize = true;
-            this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblBalance.Location = new System.Drawing.Point(50, 50);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(51, 17);
+            this.lblBalance.Size = new System.Drawing.Size(51, 20);
             this.lblBalance.TabIndex = 7;
             this.lblBalance.Text = "余额：";
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.BackColor = System.Drawing.Color.White;
+            this.panelContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelContainer.Controls.Add(this.lblBalance);
+            this.panelContainer.Controls.Add(this.lblWelcome);
+            this.panelContainer.Controls.Add(this.btnLogout);
+            this.panelContainer.Controls.Add(this.btnChangePassword);
+            this.panelContainer.Controls.Add(this.btnQuery);
+            this.panelContainer.Controls.Add(this.btnTransfer);
+            this.panelContainer.Controls.Add(this.btnDeposit);
+            this.panelContainer.Controls.Add(this.btnWithdraw);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(384, 281);
+            this.panelContainer.TabIndex = 8;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(236, 240, 241);
             this.ClientSize = new System.Drawing.Size(384, 281);
-            this.Controls.Add(this.lblBalance);
-            this.Controls.Add(this.lblWelcome);
-            this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnChangePassword);
-            this.Controls.Add(this.btnQuery);
-            this.Controls.Add(this.btnTransfer);
-            this.Controls.Add(this.btnDeposit);
-            this.Controls.Add(this.btnWithdraw);
+            this.Controls.Add(this.panelContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM主菜单";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

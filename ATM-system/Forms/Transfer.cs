@@ -1,5 +1,6 @@
 ﻿using ATMSimulation.Services;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ATMSimulation.Forms
@@ -12,6 +13,25 @@ namespace ATMSimulation.Forms
         {
             InitializeComponent();
             atmService = service;
+            ApplyStyles();
+        }
+
+        private void ApplyStyles()
+        {
+            // 应用窗体样式
+            UIStyleService.ApplyFormStyle(this);
+
+            // 应用控件样式
+            UIStyleService.ApplyLabelStyle(label1);
+            UIStyleService.ApplyLabelStyle(label2);
+            UIStyleService.ApplyTextBoxStyle(txtTargetCard);
+            UIStyleService.ApplyTextBoxStyle(txtAmount);
+            UIStyleService.ApplyButtonStyle(btnTransfer, ButtonStyle.Warning);
+            UIStyleService.ApplyButtonStyle(btnCancel, ButtonStyle.Secondary);
+
+            // 设置背景
+            this.BackColor = UIStyleService.LightColor;
+            panelContainer.BackColor = Color.White;
         }
 
         private void btnTransfer_Click(object sender, EventArgs e)

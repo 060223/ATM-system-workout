@@ -1,5 +1,6 @@
 ﻿using ATMSimulation.Services;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ATMSimulation.Forms
@@ -12,6 +13,28 @@ namespace ATMSimulation.Forms
         {
             InitializeComponent();
             atmService = service;
+            ApplyStyles();
+        }
+
+        private void ApplyStyles()
+        {
+            // 应用窗体样式
+            UIStyleService.ApplyFormStyle(this);
+
+            // 应用控件样式
+            UIStyleService.ApplyLabelStyle(label1);
+            UIStyleService.ApplyLabelStyle(label2);
+            UIStyleService.ApplyLabelStyle(label3);
+            UIStyleService.ApplyTextBoxStyle(txtCurrentPassword);
+            UIStyleService.ApplyTextBoxStyle(txtNewPassword);
+            UIStyleService.ApplyTextBoxStyle(txtConfirmPassword);
+            UIStyleService.ApplyButtonStyle(btnChangePassword, ButtonStyle.Primary);
+            UIStyleService.ApplyButtonStyle(btnCancel, ButtonStyle.Secondary);
+            UIStyleService.ApplyGroupBoxStyle(groupBox1);
+
+            // 设置背景
+            this.BackColor = UIStyleService.LightColor;
+            panelContainer.BackColor = Color.White;
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
@@ -46,6 +69,15 @@ namespace ATMSimulation.Forms
             {
                 MessageBox.Show("密码必须为6位数字", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNewPassword.Focus();
+                return;
+            }
+
+            // 需求一：检查新密码是否与当前密码相同
+            if (newPassword == currentPassword)
+            {
+                MessageBox.Show("新密码不能与当前密码相同", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNewPassword.Focus();
+                txtNewPassword.SelectAll();
                 return;
             }
 

@@ -12,6 +12,7 @@ namespace ATMSimulation.Forms
         {
             InitializeComponent();
             atmService = service;
+            ApplyStyles();
             UpdateBalance();
         }
 
@@ -20,6 +21,27 @@ namespace ATMSimulation.Forms
             var account = atmService.GetCurrentAccount();
             lblBalance.Text = $"余额: {account.Balance:C}";
             lblWelcome.Text = $"欢迎, {account.UserName}";
+        }
+
+        private void ApplyStyles()
+        {
+            // 应用窗体样式
+            UIStyleService.ApplyFormStyle(this);
+
+            // 应用按钮样式
+            UIStyleService.ApplyButtonStyle(btnWithdraw, ButtonStyle.Primary);
+            UIStyleService.ApplyButtonStyle(btnDeposit, ButtonStyle.Success);
+            UIStyleService.ApplyButtonStyle(btnTransfer, ButtonStyle.Warning);
+            UIStyleService.ApplyButtonStyle(btnQuery, ButtonStyle.Secondary);
+            UIStyleService.ApplyButtonStyle(btnChangePassword, ButtonStyle.Secondary);
+            UIStyleService.ApplyButtonStyle(btnLogout, ButtonStyle.Danger);
+
+            // 应用标签样式
+            UIStyleService.ApplyLabelStyle(lblWelcome, true);
+            UIStyleService.ApplyLabelStyle(lblBalance);
+
+            // 设置背景
+            this.BackColor = UIStyleService.LightColor;
         }
 
         private void btnWithdraw_Click(object sender, EventArgs e)
