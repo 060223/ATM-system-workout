@@ -15,7 +15,7 @@ namespace ATMSimulation.Forms
             ApplyStyles();
 
             // 设置默认测试账户，方便调试
-            txtCardNumber.Text = "6222020000000001";
+            txtCardNumber.Text = "6222020000000002";
             txtPassword.Text = "123456";
         }
 
