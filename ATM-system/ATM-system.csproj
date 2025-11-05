@@ -49,17 +49,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminLogin.Designer.cs">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminMain.Designer.cs">
+      <DependentUpon>AdminMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CloseAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CloseAccount.Designer.cs">
+      <DependentUpon>CloseAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Deposit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Deposit.Designer.cs">
       <DependentUpon>Deposit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IdentitySelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IdentitySelection.Designer.cs">
+      <DependentUpon>IdentitySelection.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
@@ -72,6 +96,12 @@
     </Compile>
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OpenAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OpenAccount.Designer.cs">
+      <DependentUpon>OpenAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Query.cs">
       <SubType>Form</SubType>
@@ -93,11 +123,16 @@
     </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AdminService.cs" />
     <Compile Include="Services\ATMService.cs" />
     <Compile Include="Services\DataService.cs" />
     <Compile Include="Services\UIStyleService.cs" />
+    <EmbeddedResource Include="Forms\AdminMain.resx">
+      <DependentUpon>AdminMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

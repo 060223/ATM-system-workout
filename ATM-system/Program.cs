@@ -23,8 +23,8 @@ namespace ATMSimulation
             // 配置应用程序级别的异常处理
             ConfigureExceptionHandling();
 
-            // 运行登录窗体
-            Application.Run(new LoginForm());
+            // 启动身份选择窗体
+            Application.Run(new IdentitySelectionForm());
         }
 
         /// <summary>
